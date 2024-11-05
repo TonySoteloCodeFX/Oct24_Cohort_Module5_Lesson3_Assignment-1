@@ -1,5 +1,8 @@
+# Installing and import MYSQL - pip install-connector-python
+
 import mysql.connector
 from mysql.connector import Error
+
 
 def connect_database():
     db_name = 'fitness_center_db'
@@ -9,15 +12,16 @@ def connect_database():
 
     try:
         # connecting to database 
-        conn = mysql.connector.connect(
+        connection = mysql.connector.connect(
             database = db_name,
             user = user,
             password = password,
             host = host
         )
 
-        print("Connected to Fitness Center Database successfully.")
-        return conn
+        if connection.is_connected():
+            print("Connected to Fitness Center Database successfully.")
+            return connection
     
     except Error as e:
         # handle any connection errors 

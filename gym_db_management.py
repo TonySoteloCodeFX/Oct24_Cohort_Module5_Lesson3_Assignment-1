@@ -104,7 +104,7 @@ def delete_workout_session():
             query2 = "DELETE FROM workout_sessions WHERE member_id = %s"
             curser.execute(query2, (member_id,))
             connect_db.commit()
-            print(f"Workout session has been deleted successfully.")
+            print("Workout session has been deleted successfully.")
         else:
             print("No workout sessions exist for this member.")
 
@@ -116,7 +116,7 @@ def delete_workout_session():
         connect_db.close()
 
 # update_age()
-# display_all_members()
+display_all_members()
 # display_all_workouts()
 # add_member()
 # delete_workout_session()
